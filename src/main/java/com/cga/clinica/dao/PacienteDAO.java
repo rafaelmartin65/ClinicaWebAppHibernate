@@ -6,7 +6,8 @@ import com.cga.clinica.pojo.Paciente;
 
 public interface PacienteDAO {
 
-	public boolean save (Paciente paciente);
+	//public boolean save (Paciente paciente);
+	public void save (Paciente paciente);
 
 	public List<Paciente> findAll();
 
@@ -14,9 +15,12 @@ public interface PacienteDAO {
 
 	public List<Paciente> findByNombre(String nombre);
 	
-	public boolean update(Paciente pac);
+	//public boolean update(Paciente pac);
+	public void update(Paciente pac);
 	
-	public boolean delete(int idPaciente);
+	//public boolean delete(int idPaciente);
+	//public void delete(int idPaciente);
+	public void delete(Paciente pac);
 	
 	public int[] saveAll(List<Paciente> pacientes);
 }

@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 
 @Entity
-@Table(name="Pacientes")
+@Table(name="Paciente")
 public class Paciente {
 
 	@Id

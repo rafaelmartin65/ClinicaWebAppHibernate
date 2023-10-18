@@ -41,7 +41,9 @@ public class PacienteService {
 
 	public void delete(int id) {
 		//instanciar
-		pacienteDAO.delete(id);
+		
+		Paciente pac = pacienteDAO.findById(id);
+		pacienteDAO.delete(pac);
 	}
 
 }

@@ -17,6 +17,7 @@ public class PacienteController {
 
 	@Autowired
 	private PacienteService pacienteService;
+	
 
 	@RequestMapping("/paciente")
 	public String mostrarPaciente(Model model) {
@@ -32,7 +33,7 @@ public class PacienteController {
 		return "/pacientes";
 	}
 
-	@RequestMapping(value = "/paciente/guardar", method = RequestMethod.POST)
+	@RequestMapping(value = "/paciente/save", method = RequestMethod.POST)
 	// @ModelAttribute: Nos va a leer del modelo con clave Paciente y decirle que de
 	// tipo es Paciente pacienteForm
 	// y el modelo colocar pacienteForm (que debo colocarlo en index.jsp)
@@ -62,9 +63,6 @@ public class PacienteController {
 	}
 	
 	@RequestMapping ("/paciente/{idPaciente}/eliminar")
-	
-	
-	
 	public String eliminarPaciente (Model model, @PathVariable ("idPaciente")
 	int id, RedirectAttributes ra) {
 		// aplicar un jquery para mostrar advertencia antes de eliminar
