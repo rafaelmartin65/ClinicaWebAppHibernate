@@ -1,10 +1,24 @@
 package com.cga.clinica.pojo;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
+
+@Entity
+@Table(name="Paciente")
 public class Paciente {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idPaciente;
+	
+	@Column(name="nombre", nullable = false)
 	private String nombre;
 	private String apellidos;
 	private int edad;
