@@ -17,14 +17,14 @@ public class IndexController {
 	//Es una interfaz que nos permite definir atributos en el modelo
 	@RequestMapping("/")
 	public String mostrarIndex (Model model) {
-		System.out.println("XDXDXDXDXDXDXDXD");
+		
 //		model.addAttribute("resultado", "Resultado de la session");
 		return "index";
 	}
 	
 	@RequestMapping("/otra")
 	public String mostrarOtrarPag(HttpSession session) {
-		System.out.println("Otra pagina!!!");
+		
 //		session.setAttribute("mensaje", "Mensaje de otra pagina");
 //		model.addAttribute("mensaje", "Mensaje de otra pagina");
 		return "otra";

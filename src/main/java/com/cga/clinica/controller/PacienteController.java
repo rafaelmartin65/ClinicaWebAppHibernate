@@ -67,10 +67,10 @@ public class PacienteController {
 	int id, RedirectAttributes ra) {
 		// aplicar un jquery para mostrar advertencia antes de eliminar
 		pacienteService.delete(id);
-			ra.addFlashAttribute("info","Cambios satisfactorio!");
+		ra.addFlashAttribute("info","Cambios satisfactorio!");
 		
 		
-		return "redirect:/pacientes";
+		return "redirect:/paciente";
 	}	
 	   
 }
