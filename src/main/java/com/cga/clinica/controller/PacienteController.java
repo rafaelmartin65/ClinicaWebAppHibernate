@@ -22,6 +22,15 @@ public class PacienteController {
 	@RequestMapping("/paciente")
 	public String mostrarPaciente(Model model) {
 
+		Paciente pac = new Paciente();
+		model.addAttribute("paciente", pac);
+		
+		return "paciente";
+	}
+	
+	@RequestMapping("/pacientes")
+	public String showPacientes(Model model) {
+
 		// listar todos los pacientes
 
 		List<Paciente> pacientes = pacienteService.findAll();
@@ -32,6 +41,7 @@ public class PacienteController {
 
 		return "/pacientes";
 	}
+	
 
 	@RequestMapping(value = "/paciente/save", method = RequestMethod.POST)
 	// @ModelAttribute: Nos va a leer del modelo con clave Paciente y decirle que de
@@ -52,17 +62,18 @@ public class PacienteController {
 	}
 
 	@RequestMapping("/paciente/{idPaciente}/actualizar")
-	
 	public String modificarPaciente (Model model,
 			@PathVariable ("idPaciente") int id) {
 		
-		Paciente paciente =pacienteService.findById(id);
+		Paciente paciente = pacienteService.findById(id);
 		model.addAttribute("paciente",paciente);
-		return "paciente";
+		return "pacientes";
 		
 	}
 	
-	@RequestMapping ("/paciente/{idPaciente}/eliminar")
+	
+	
+	@RequestMapping ("/pacientes/{idPaciente}/eliminar")
 	public String eliminarPaciente (Model model, @PathVariable ("idPaciente")
 	int id, RedirectAttributes ra) {
 		// aplicar un jquery para mostrar advertencia antes de eliminar
@@ -70,7 +81,7 @@ public class PacienteController {
 		ra.addFlashAttribute("info","Cambios satisfactorio!");
 		
 		
-		return "redirect:/paciente";
+		return "redirect:/pacientes";
 	}	
 	   
 }

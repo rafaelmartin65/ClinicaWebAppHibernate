@@ -51,7 +51,7 @@
           <a class="nav-link active" aria-current="page" href='<c:url value="/"/>'>Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href='<c:url value="/paciente"/>'>Paciente</a>
+          <a class="nav-link" href='<c:url value="/pacientes"/>'>Paciente</a>
         </li>
         
         <li class="nav-item">
