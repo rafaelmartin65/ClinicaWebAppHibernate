@@ -6,10 +6,11 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
+import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -43,14 +44,18 @@ public class PacienteDaoImple implements PacienteDAO {
 
 	@Override
 	public Paciente findById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		// Buscar por id de paciente
+		Criteria crit = getSession().createCriteria(Paciente.class);
+		crit.add(Restrictions.eqOrIsNull("idPaciente", id));
+		
+		return (Paciente) crit.uniqueResult();
 	}
 
 	@Override
 	public List<Paciente> findByNombre(String nombre) {
-		// TODO Auto-generated method stub
-		return null;
+		Criteria crit = getSession().createCriteria(Paciente.class);
+		crit.add(Restrictions.like("nombre", "%" + nombre + "%"));
+		return crit.list();
 	}
 
 	@Override

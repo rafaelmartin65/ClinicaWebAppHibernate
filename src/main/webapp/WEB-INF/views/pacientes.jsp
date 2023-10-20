@@ -64,7 +64,7 @@
 											href="./paciente/${paciente.idPaciente}/actualizar"
 											class="btn btn-primary btn-sm" role="button"
 											aria-pressed="true">Modificar</a></td>
-										<td><a href="./paciente/${paciente.idPaciente}/eliminar"
+										<td><a href="./pacientes/${paciente.idPaciente}/eliminar"
 											class="btn btn-primary btn-sm" role="button"
 											aria-pressed="true">Eliminar</a></td>
 									</tr>

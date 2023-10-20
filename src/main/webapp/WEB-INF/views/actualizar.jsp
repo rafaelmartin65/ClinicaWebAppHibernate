@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
@@ -15,15 +14,6 @@
 	crossorigin="anonymous">
 </head>
 <body>
-
-  <!--   desde aquí a la pizarra
-  <h1> Pacientes.jsp</h1>
-  <hr>
-  <div class="card">
-  	<h4 class="card-header">
-  	<strong> Listado de Pacientes</strong>
-  	</h4>-->
-  
 	<nav class="navbar bg-primary navbar-expand-lg" data-bs-theme="dark">
 		<div class="container-fluid">
 			<span class="navbar-brand mb-0 h1">Hospital</span>
@@ -46,21 +36,18 @@
 		</div>
 	</nav>
 
-
 	<div class="mt-1 mb-5 justify-content-center d-flex">
-		<!-- commandName va ser el nombre de un atributo q va a estar en el modelo,
-	 no va tener un string, sino una nueva instancia del pojo Paciente -->
 		<form:form
 			action="${pageContext.servletContext.contextPath}/paciente/guardar"
 			method="post" modelAttribute="paciente">
 			<h1 class="mt-3 mb-3">Gestion de Paciente</h1>
-			<div class="mb-3">
-				<label class="form-label">ID Paciente</label>
-				<form:input path="idPaciente" type="number" class="form-control" />
-			</div>
+
+			<!-- Agrega un campo oculto para el ID del paciente -->
+			<form:hidden path="idPaciente" />
+
 			<div class="mb-3">
 				<label class="form-label">Nombre</label>
-				<form:input path="nombre" type="text" class="form-control" />
+				<form:input path="nombre" value="nombre" type="text" class="form-control" />
 			</div>
 			<div class="mb-3">
 				<label class="form-label">Apellidos</label>
@@ -87,6 +74,5 @@
 			<c:out value="${info}"></c:out>
 		</form:form>
 	</div>
-
 </body>
 </html>
