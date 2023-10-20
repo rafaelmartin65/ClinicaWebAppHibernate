@@ -43,7 +43,7 @@
 								<th scope="col">Apellidos</th>
 								<!-- <th scope="col">Sexo</th> -->
 								<th scope="col">Edad</th>
-								<th scope="col">Dirección</th>
+								<!-- <th scope="col">Dirección</th> -->
 								<th scope="col">Teléfono</th>
 								<th scope="col">Historial</th>
 							</tr>
@@ -57,7 +57,7 @@
 										<td>${paciente.nombre}</td>
 										<td>${paciente.apellidos}</td>
 										<td>${paciente.edad}</td>
-										<td>${paciente.direccion}</td>
+										<%-- <td>${paciente.direccion}</td> --%>
 										<td>${paciente.telefono}</td>
 										<td>${paciente.historial}</td>
 										<td><a

@@ -74,10 +74,10 @@
 				<label class="form-label">Telefono</label>
 				<form:input path="telefono" type="text" class="form-control" />
 			</div>
-			<div class="mb-3">
+			<%-- <div class="mb-3">
 				<label class="form-label">Direccion</label>
 				<form:input path="direccion" type="text" class="form-control" />
-			</div>
+			</div> --%>
 			<div class="mb-3">
 				<label class="form-label">Historial</label>
 				<form:textarea rows="5" style="resize: none" path="historial"

@@ -1,10 +1,13 @@
 package com.cga.clinica.pojo;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +28,13 @@ public class Paciente {
 	private int telefono;
 	
 	private String historial;
+	
+	@OneToMany(mappedBy= "paciente")
+	private Set<Direccion> direcciones;
+	
 
+
+	
 	public void imprimirHistorial() {
 		System.out.println("Paciente con Historial");
 	}
@@ -85,8 +94,15 @@ public class Paciente {
 
 	
 
-	
+	public Set<Direccion> getDirecciones() {
+		return direcciones;
+	}
 
+	public void setDirecciones(Set<Direccion> direcciones) {
+		this.direcciones = direcciones;
+	}
+
+	
 	public String getHistorial() {
 		return historial;
 	}
