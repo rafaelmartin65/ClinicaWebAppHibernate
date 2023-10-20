@@ -23,7 +23,7 @@ public class Paciente {
 	private String apellidos;
 	private int edad;
 	private int telefono;
-	private String direccion;
+	
 	private String historial;
 
 	public void imprimirHistorial() {
@@ -33,14 +33,13 @@ public class Paciente {
 	public Paciente() {
 	}
 
-	public Paciente(int idPaciente, String nombre, String apellidos, int edad, int telefono, String direccion,
-			String historial) {
+	public Paciente(int idPaciente, String nombre, String apellidos, int edad, int telefono, String historial) {
 		this.idPaciente = idPaciente;
 		this.nombre = nombre;
 		this.apellidos= apellidos;
 		this.edad = edad;
 		this.telefono = telefono;
-		this.direccion = direccion;
+		
 		this.historial = historial;
 	}
 
@@ -84,14 +83,9 @@ public class Paciente {
 		this.telefono = telf;
 	}
 
-	public String getDireccion() {
-		return direccion;
-	}
+	
 
-	@Autowired
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
-	}
+	
 
 	public String getHistorial() {
 		return historial;
@@ -104,7 +98,7 @@ public class Paciente {
 	@Override
 	public String toString() {
 		return "Paciente [idPaciente=" + idPaciente + ", nombre=" + nombre + ", apellidos=" + apellidos + ", edad=" + edad
-				+ ", telefono=" + telefono + ", direccion=" + direccion + ", historial=" + historial + "]";
+				+ ", telefono=" + telefono + ", historial=" + historial + "]";
 	}
 
 }
