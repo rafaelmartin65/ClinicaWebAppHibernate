@@ -67,7 +67,7 @@ public class PacienteController {
 		
 		Paciente paciente = pacienteService.findById(id);
 		model.addAttribute("paciente",paciente);
-		return "pacientes";
+		return "paciente";
 		
 	}
 	

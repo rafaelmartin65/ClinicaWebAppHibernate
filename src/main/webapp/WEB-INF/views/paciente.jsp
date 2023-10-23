@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
@@ -16,15 +15,9 @@
 </head>
 <body>
 
-  <!--   desde aquí a la pizarra
-  <h1> Pacientes.jsp</h1>
-  <hr>
-  <div class="card">
-  	<h4 class="card-header">
-  	<strong> Listado de Pacientes</strong>
-  	</h4>-->
+ 	<%@ include file="navBar.jsp" %>
   
-	<nav class="navbar bg-primary navbar-expand-lg" data-bs-theme="dark">
+	<%-- <nav class="navbar bg-primary navbar-expand-lg" data-bs-theme="dark">
 		<div class="container-fluid">
 			<span class="navbar-brand mb-0 h1">Hospital</span>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -44,14 +37,14 @@
 				</form:form>
 			</div>
 		</div>
-	</nav>
+	</nav> --%>
 
 
 	<div class="mt-1 mb-5 justify-content-center d-flex">
 		<!-- commandName va ser el nombre de un atributo q va a estar en el modelo,
 	 no va tener un string, sino una nueva instancia del pojo Paciente -->
 		<form:form
-			action="${pageContext.servletContext.contextPath}/paciente/guardar"
+			action="${pageContext.servletContext.contextPath}/paciente/save"
 			method="post" modelAttribute="paciente">
 			<h1 class="mt-3 mb-3">Gestion de Paciente</h1>
 			<div class="mb-3">

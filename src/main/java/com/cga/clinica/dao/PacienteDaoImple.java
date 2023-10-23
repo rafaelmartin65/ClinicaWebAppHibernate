@@ -19,7 +19,7 @@ import com.cga.clinica.pojo.Paciente;
 //@Component("PacienteDao")
 @Transactional
 @Repository
-public class PacienteDaoImple implements PacienteDAO {
+public class PacienteDaoImple implements PacienteDao {
 	
 	@Autowired
 	private SessionFactory sessionFactory;

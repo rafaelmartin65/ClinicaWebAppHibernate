@@ -21,8 +21,38 @@
 
 </head>
 <body>
-	<h1>Pacientes.jsp</h1>
-	<hr>
+
+	<%@ include file="navBar.jsp" %>
+	<%-- <nav class="navbar bg-primary navbar-expand-lg" data-bs-theme="dark">
+
+
+		<div class="container-fluid">
+
+
+			<span class="navbar-brand mb-0 h1"></span>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item"><a class="nav-link active"
+						aria-current="page" href='<c:url value="/"/>'>Inicio</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href='<c:url value="/pacientes"/>'>Paciente</a></li>
+
+					<li class="nav-item"><a class="nav-link"
+						href='<c:url value="pacientes "/>'>Pacientes</a></li>
+
+					<li class="nav-item"><a class="nav-link"
+						href='<c:url value="/otra"/>'>Otra</a> <!-- aria-disabled="true"  -->
+					</li>
+
+				</ul>
+				<form:form class="d-flex" role="search">
+					<input class="form-control me-2" type="search"
+						placeholder="Buscar Paciente" aria-label="Search">
+					<button class="btn btn-outline-light" type="submit">Buscar</button>
+				</form:form>
+			</div>
+		</div>
+	</nav> --%>
 	<div class="container">
 		<div class="card">
 			<h4 class="card-header">
@@ -43,7 +73,7 @@
 								<th scope="col">Apellidos</th>
 								<!-- <th scope="col">Sexo</th> -->
 								<th scope="col">Edad</th>
-								<!-- <th scope="col">Dirección</th> -->
+								<th scope="col">Dirección</th>
 								<th scope="col">Teléfono</th>
 								<th scope="col">Historial</th>
 							</tr>
@@ -58,6 +88,10 @@
 										<td>${paciente.apellidos}</td>
 										<td>${paciente.edad}</td>
 										<%-- <td>${paciente.direccion}</td> --%>
+										<td><a href="./direccion/${paciente.idPaciente}" 
+												class="btn btn-primary btn-sm" 
+												role="button" 
+												aria-pressed="true">Direcciones</a></td>
 										<td>${paciente.telefono}</td>
 										<td>${paciente.historial}</td>
 										<td><a
