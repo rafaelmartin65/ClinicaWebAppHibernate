@@ -10,8 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 
 @Entity
 @Table(name="Paciente")
@@ -30,7 +28,7 @@ public class Paciente {
 	private String historial;
 	
 	@OneToMany(mappedBy= "paciente")
-	private Set<Direccion> direcciones;
+	private Set<Direccion> direccion;
 	
 
 
@@ -95,11 +93,11 @@ public class Paciente {
 	
 
 	public Set<Direccion> getDirecciones() {
-		return direcciones;
+		return direccion;
 	}
 
-	public void setDirecciones(Set<Direccion> direcciones) {
-		this.direcciones = direcciones;
+	public void setDireccion(Set<Direccion> direcciones) {
+		this.direccion = direcciones;
 	}
 
 	

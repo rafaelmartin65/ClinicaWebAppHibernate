@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.cga.clinica.pojo.Paciente;
 
-public interface PacienteDAO {
+public interface PacienteDao {
 
 	//public boolean save (Paciente paciente);
 	public void save (Paciente paciente);

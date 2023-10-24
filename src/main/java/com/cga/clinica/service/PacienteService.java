@@ -5,26 +5,26 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cga.clinica.dao.PacienteDAO;
+import com.cga.clinica.dao.PacienteDao;
 import com.cga.clinica.pojo.Paciente;
 
 @Service
 public class PacienteService {
 
 	@Autowired
-	private PacienteDAO pacienteDAO;
+	private PacienteDao pacienteDao;
 
 	public void save(Paciente paciente) {
-		pacienteDAO.save(paciente);
+		pacienteDao.save(paciente);
 	}
 
 	public List<Paciente> findAll() {
-		return pacienteDAO.findAll();
+		return pacienteDao.findAll();
 
 	}
 
 	public Paciente findById(int id) {
-		return pacienteDAO.findById(id);
+		return pacienteDao.findById(id);
 
 	}
 
@@ -32,18 +32,18 @@ public class PacienteService {
 		if (paciente.getIdPaciente() == 0) {
 			//Se puede colocar un syso to.String para que se vea que hace
 			// Insert
-			pacienteDAO.save(paciente);
+			pacienteDao.save(paciente);
 		} else {
 			// update
-			pacienteDAO.update(paciente);
+			pacienteDao.update(paciente);
 		}
 	}
 
 	public void delete(int id) {
 		//instanciar
 		
-		Paciente pac = pacienteDAO.findById(id);
-		pacienteDAO.delete(pac);
+		Paciente pac = pacienteDao.findById(id);
+		pacienteDao.delete(pac);
 	}
 
 }
